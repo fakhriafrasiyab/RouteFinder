@@ -70,7 +70,7 @@ public class SmallestSubstring {
     }
 
     public static void main(String[] args) {
-        String[] strArr = new String[]{"ADOBECODEBANC", "ABC"};
+        String[] strArr = new String[]{"aaabaaddae", "aed"};
         System.out.println(stringChallenge(strArr));
     }
 }
