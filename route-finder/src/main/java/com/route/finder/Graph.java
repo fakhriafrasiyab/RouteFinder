@@ -35,30 +35,26 @@ public class Graph {
     }
 
     public void DijkstraShortestPath(City source, City destination) {
-        // We keep track of which path gives us the shortest path for each node
-        // by keeping track how we arrived at a particular node, we effectively
-        // keep a "pointer" to the parent node of each node, and we follow that
-        // path to the start
         HashMap<City, City> changedAt = new HashMap<>();
         changedAt.put(source, null);
 
-        HashMap<City, Double> shortestPathMap = new HashMap<>();
+        HashMap<City, Double> shortestRouteMap = new HashMap<>();
 
         for (City city : cities) {
             if (city == source)
-                shortestPathMap.put(source, 0.0);
-            else shortestPathMap.put(city, Double.POSITIVE_INFINITY);
+                shortestRouteMap.put(source, 0.0);
+            else shortestRouteMap.put(city, Double.POSITIVE_INFINITY);
         }
 
         for (Edge edge : source.edges) {
-            shortestPathMap.put(edge.destination, edge.distance);
+            shortestRouteMap.put(edge.destination, edge.distance);
             changedAt.put(edge.destination, source);
         }
 
         source.visit();
 
         while (true) {
-            City currentCity = closestReachableUnvisited(shortestPathMap);
+            City currentCity = closestReachableUnvisited(shortestRouteMap);
             // if we can't get the closest city it means they are not connected
             if (currentCity == null) {
                 System.out.println("There isn't a path between " + source.getName() + " and " + destination.getName());
@@ -77,29 +73,20 @@ public class Graph {
                     if (parent == null) {
                         break;
                     }
-
-                    // Since our changedAt map keeps track of child -> parent relations
-                    // in order to print the path we need to add the parent before the child and
-                    // it's descendants
                     path = parent.getName() + " " + path;
                     child = parent;
                 }
                 System.out.println(path);
-                System.out.println("The path costs: " + shortestPathMap.get(destination));
+                System.out.println("The path costs: " + shortestRouteMap.get(destination));
                 return;
             }
             currentCity.visit();
-
-            // Now we go through all the unvisited nodes our current node has an edge to
-            // and check whether its shortest path value is better when going through our
-            // current node than whatever we had before
             for (Edge edge : currentCity.edges) {
                 if (edge.destination.isVisited())
                     continue;
 
-                if (shortestPathMap.get(currentCity) + edge.distance < shortestPathMap.get(edge.destination)) {
-                    shortestPathMap.put(edge.destination,
-                            shortestPathMap.get(currentCity) + edge.distance);
+                if (shortestRouteMap.get(currentCity) + edge.distance < shortestRouteMap.get(edge.destination)) {
+                    shortestRouteMap.put(edge.destination, shortestRouteMap.get(currentCity) + edge.distance);
                     changedAt.put(edge.destination, currentCity);
                 }
             }
