@@ -1,0 +1,11 @@
+
+o	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ù‰ûÿÿÿÿ8«ÓÑÓé/
+t
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(„ù‰ûÿÿÿÿ8«ÓÑÓé/
+U	java:S106S"9Replace this use of System.out or System.err by a logger.(å³ÇÅ8±ÓÑÓé/
+U	java:S106Y"9Replace this use of System.out or System.err by a logger.(ŸÏ´8²ÓÑÓé/
+U	java:S106n"9Replace this use of System.out or System.err by a logger.(ÍÎÉ 8´ÓÑÓé/
+Z	java:S106o"9Replace this use of System.out or System.err by a logger.(Ûˆª÷ùÿÿÿÿ8µÓÑÓé/
+v	java:S135Š"YReduce the total number of break and continue statements in this loop to use at most one.(ê¡8¸ÓÑÓé/
+>
+java:S1643k"Use a StringBuilder instead.(ˆ±şÿÿÿÿ8¸ÓÑÓé/
