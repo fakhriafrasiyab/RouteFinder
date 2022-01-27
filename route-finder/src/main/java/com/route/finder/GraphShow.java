@@ -9,9 +9,6 @@ public class GraphShow {
         City three = new City("Kikinda", "45.831178", "20.473791");
         City four = new City("Bečej", "45.614361", "20.047463");
 
-        // Our addEdge method automatically adds Nodes as well.
-        // The addNode method is only there for unconnected Nodes,
-        // if we wish to add any
         graphWeighted.addEdge(zero, one, 8);
         graphWeighted.addEdge(zero, two, 11);
         graphWeighted.addEdge(one, two, 7);
