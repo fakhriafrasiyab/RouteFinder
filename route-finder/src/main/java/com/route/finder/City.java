@@ -7,7 +7,7 @@ public class City {
     private String latitude;
     private String longitude;
     private boolean visited;
-    LinkedList<EdgeWeighted> edges;
+    LinkedList<Edge> edges;
 
     City(String name, String latitude, String longitude) {
         this.name = name;
