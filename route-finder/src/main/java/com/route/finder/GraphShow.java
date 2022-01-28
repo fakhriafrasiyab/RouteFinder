@@ -57,6 +57,6 @@ public class GraphShow {
         graph.addEdge(thirteen, fifteen, 65.7);//two directional
         graph.addEdge(five, thirteen, 65.7);
 
-        graph.DijkstraShortestPath(zero, twelve);
+        graph.dijkstraShortestRoute(zero, twelve);
     }
 }

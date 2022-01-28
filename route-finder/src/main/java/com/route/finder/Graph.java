@@ -34,7 +34,7 @@ public class Graph {
         source.edges.add(new Edge(source, destination, distance));
     }
 
-    public void DijkstraShortestPath(City source, City destination) {
+    public void dijkstraShortestRoute(City source, City destination) {
         HashMap<City, City> changedAt = new HashMap<>();
         changedAt.put(source, null);
 
